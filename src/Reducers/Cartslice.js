@@ -13,10 +13,10 @@ const Cartslice=createSlice({
     initialState,
     reducers:{
          addProduct:(state ,action)=>{
-            const find=state.products.findIndex((item)=>(item.id===action.payload));
+            const find=state.products.findIndex((item)=>(item.id===action.payload.id));
 
             if(find>=0){
-                state.products.map((item)=>(item.id===action.payload ? {...item, }:item));
+                state.products[find].qty+=1;
             }
             else{
 
