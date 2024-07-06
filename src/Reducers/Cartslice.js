@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { act } from "react-dom/test-utils";
 
 
 
@@ -32,10 +33,49 @@ const Cartslice=createSlice({
             
            
 
+        },
+
+        removeCart:(state,action)=>{
+
+        //    console.log(action.payload.id)
+
+         state.products=state.products.filter((item)=>(item.id !== action.payload.id));
+
+          
+
+            
+           
+
+        },
+
+        decreaseQuantity:(state , action)=>{
+            const find=state.products.findIndex((item)=>(item.id===action.payload.id));
+            if(find>=0){
+                if(state.products[find].qty===0){
+                    state.products=state.products.filter((item)=>(item.id !==action.payload.id))
+                }
+                else{
+                    state.products[find].qty-=1;
+                }
+            }
+
+        },
+
+        increaseQuantity:(state , action)=>{
+            const find=state.products.findIndex((item)=>(item.id===action.payload.id));
+            if(find>=0){
+                state.products[find].qty+=1;
+                
+                
+            }
+            
+
+
         }
 
     }
 })
 
-export const {addProduct}=Cartslice.actions;
+export const {addProduct ,removeCart , decreaseQuantity ,increaseQuantity}=Cartslice.actions;
+
 export const Cartreducer=Cartslice.reducer;

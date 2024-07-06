@@ -1,15 +1,25 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { IoMdStar } from "react-icons/io";
+import { removeCart } from '../Reducers/Cartslice';
+import { useDispatch } from 'react-redux';
+import { IoMdAdd } from "react-icons/io";
+import { RiSubtractLine } from "react-icons/ri";
+import { addProduct } from '../Reducers/Cartslice';
+import { decreaseQuantity } from '../Reducers/Cartslice';
+import { increaseQuantity } from '../Reducers/Cartslice';
 
 function Cart() {
     const Carts = useSelector(state => state.products);
+    const dispatch=useDispatch();
+
+  
 
     return (
         <div>
             {Carts.map((item) => {
                 return (
-                    <div key={item.id}>
+                    <div key={item.id} >
 
                         <div className='grid grid-cols-2 p-10'>
                             <div className='h-[500px] flex justify-center items-center'>
@@ -34,13 +44,13 @@ function Cart() {
                                     <h2 className='w-96 flex items-center'>Price: ${item.price}</h2>
                                 </div>
                                 <div className='w-12 text-[#ffffff] text-[20px]'>
-                                    <h2 className='w-96 flex items-center'>Quantity: ${item.qty}</h2>
+                                    <h2 className='w-96 flex items-center gap-3'>Quantity:<IoMdAdd onClick={()=>dispatch(increaseQuantity(item))}  className='w-[30px] cursor-pointer h-[20px] bg-[#17cf97] text-[#ffffff] rounded-full shadow-lg'/> {item.qty} <RiSubtractLine onClick={()=>dispatch(decreaseQuantity(item))}  className='w-[30px] cursor-pointer h-[20px] bg-[#17cf97] rounded-full text-[#ffffff] shadow-lg'/></h2>
                                 </div>
 
                                
 
                                 <div className='w-96 h-20 flex  gap-5'>
-                                    <button className='w-[200px] h-[50px] bg-[#17cf97] hover:bg-transparent hover:border-2 duration-500 ease-linear  text-[#ffffff] flex justify-center items-center'>Remove Cart</button>
+                                    <button onClick={()=>dispatch(removeCart(item))} className='w-[200px] h-[50px] bg-[#17cf97] hover:bg-transparent hover:border-2 duration-500 ease-linear  text-[#ffffff] flex justify-center items-center'>Remove Cart</button>
                                    
                                 </div>
 
