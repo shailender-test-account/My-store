@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 // #1b2430 green and #17cf97 black
 
 function Header() {
-    const Cartsquantity = useSelector(state => state.products);
+    const Cartsquantity = useSelector(state => state.cartRed.products);
 
     return (
         <div>
@@ -21,7 +21,7 @@ function Header() {
                             <span></span>
                         </div>
 
-                        <Link to={"/signin"}
+                        <Link to={"/login"}
                             className="text-[#ffffff] bg-[#1b2430] hover:bg-[#17cf97] focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">Sign In</Link>
                          <Link to={"/signin"}
                             className="text-[#ffffff] bg-[#1b2430] hover:bg-[#17cf97] focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800 flex justify-center items-center" ><FaCartShopping  size={20}/>{Cartsquantity.length}</Link>

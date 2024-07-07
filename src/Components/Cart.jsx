@@ -10,7 +10,7 @@ import { decreaseQuantity } from '../Reducers/Cartslice';
 import { increaseQuantity } from '../Reducers/Cartslice';
 
 function Cart() {
-    const Carts = useSelector(state => state.products);
+    const Carts = useSelector(state => state.cartRed.products);
     const dispatch=useDispatch();
 
   
