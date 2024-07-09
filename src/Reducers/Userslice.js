@@ -4,8 +4,6 @@ import React from "react";
 const initialState={
     profiles:null,
     loggedin:false,
-  
-
 }
 
  const UserSlice=createSlice({
@@ -19,8 +17,6 @@ const initialState={
 
         login:(state,action)=>{
             state.loggedin=action.payload
-            
-
         }
     }
  });

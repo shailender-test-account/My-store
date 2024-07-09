@@ -13,8 +13,6 @@ function Cart() {
     const Carts = useSelector(state => state.cartRed.products);
     const dispatch=useDispatch();
 
-  
-
     return (
         <div>
             {Carts.map((item) => {

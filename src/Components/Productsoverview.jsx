@@ -7,8 +7,6 @@ function Productsoverview() {
     const [filter, setFilter] = useState([]);
     // console.log(products)
     console.log(filter)
-
-
     useEffect(() => {
 
         const getProducts = async () => {
@@ -27,7 +25,7 @@ function Productsoverview() {
     const filterProducts = (cat) => {
         const updatedlist = products.filter((item) => (item.category === cat));
         setFilter(updatedlist);
-        f
+        
     }
 
     return (
@@ -42,8 +40,7 @@ function Productsoverview() {
                         <button  onClick={() => setFilter(products)} className={({ isActive }) => `
                          font-[200] text-[18px] ${isActive ? ' text-[#17cf97]' : ' text-[#1b2430]'}
                          
-                         
-                        `}>
+                                               `}>
 
                             All Products
                         </button>

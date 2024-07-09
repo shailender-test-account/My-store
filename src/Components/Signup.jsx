@@ -10,9 +10,7 @@ import { Link } from 'react-router-dom';
 function Signup() {
     const Navigate=useNavigate();
 
-    const dispatch = useDispatch();
-   
-    
+    const dispatch = useDispatch();   
     const [input, setInput] = useState({
         
         email: "",
@@ -20,12 +18,6 @@ function Signup() {
         confirmpassword: ""
 
     });
-
-
-
-
-
-    
 
     const handelInnput = (e) => {
 
@@ -38,15 +30,7 @@ function Signup() {
                 }
             )
         }
-
-
-
-        )
-
-
-
-
-
+      )
 
     }
 

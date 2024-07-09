@@ -24,19 +24,15 @@ const router = createBrowserRouter(
     <Route path='/' element={<App />}>
       <Route path='/' element={<Protectedroute />}>
         <Route path='/' element={<Home />} />
+        <Route path='/products' element={<Productsoverview />} />
+        <Route path='/products/:id' element={<Product />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/cart' element={<Cart />} />
       </Route>
-      <Route path='/products' element={<Productsoverview />} />
-      <Route path='/products/:id' element={<Product />} />
-      <Route path='/about' element={<About />} />
-      <Route path='/contact' element={<Contact />} />
-      <Route path='/cart' element={<Cart />} />
       <Route path='/signup' element={<Signup />} />
       <Route path='/login' element={<Login />} />
-
-
-
     </Route>
-
   )
 )
 
