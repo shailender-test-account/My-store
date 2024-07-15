@@ -15,19 +15,25 @@ function Product() {
     }
 
     const[product,setProduct]=useState([]);
-    console.log(product)
+    
     const {id}=useParams();
 
     useEffect(()=>{
-
         const getProduct=async()=>{
+            console.log("abc")
             let response=await fetch(`https://fakestoreapi.com/products/${id}`)
             let data=await response.json();
             setProduct(data)
-
+    
         }
+
+      
         getProduct();
     },[])
+    
+
+
+
   return (
     <div>
 

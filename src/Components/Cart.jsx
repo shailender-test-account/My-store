@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
 import { IoMdStar } from "react-icons/io";
 import { removeCart } from '../Reducers/Cartslice';
 import { useDispatch } from 'react-redux';
@@ -8,6 +8,7 @@ import { RiSubtractLine } from "react-icons/ri";
 import { addProduct } from '../Reducers/Cartslice';
 import { decreaseQuantity } from '../Reducers/Cartslice';
 import { increaseQuantity } from '../Reducers/Cartslice';
+import { Link } from 'react-router-dom';
 
 function Cart() {
     const Carts = useSelector(state => state.cartRed.products);
@@ -47,8 +48,9 @@ function Cart() {
 
                                
 
-                                <div className='w-96 h-20 flex  gap-5'>
+                                <div className='w-96 h-20 flex   gap-5'>
                                     <button onClick={()=>dispatch(removeCart(item))} className='w-[200px] h-[50px] bg-[#17cf97] hover:bg-transparent hover:border-2 duration-500 ease-linear  text-[#ffffff] flex justify-center items-center'>Remove Cart</button>
+                                    <Link to={"/order"} className='w-[200px] h-[50px] bg-[#17cf97] hover:bg-transparent hover:border-2 duration-500 ease-linear  text-[#ffffff] flex justify-center items-center'>Place Order</Link>
                                    
                                 </div>
 
@@ -68,4 +70,4 @@ function Cart() {
     )
 }
 
-export default Cart
+export default Cart;

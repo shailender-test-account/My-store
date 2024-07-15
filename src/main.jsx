@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
+import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
 import About from './Components/About.jsx';
 import Contact from './Components/Contact.jsx';
@@ -17,6 +17,8 @@ import Protectedroute from './Components/Protectedroute.jsx';
 
 import './index.css'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
+import Placeorder from './Components/Placeorder.jsx';
+import YourOrder from './Components/YourOrder.jsx';
 
 
 const router = createBrowserRouter(
@@ -29,6 +31,8 @@ const router = createBrowserRouter(
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/cart' element={<Cart />} />
+        <Route path='/order' element={<Placeorder/>}/>
+        <Route path='/userprofile' element={<YourOrder/>}/>
       </Route>
       <Route path='/signup' element={<Signup />} />
       <Route path='/login' element={<Login />} />
